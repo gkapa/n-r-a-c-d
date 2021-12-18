@@ -8,9 +8,12 @@ services:
   node:
     build:  
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
+    tty: true
+    stdin_open: true
     volumes:
-      - ./frontend:/usr/src/app
-    command: sh -c "yarn start"
+      - /app/node_modules # 로컬에 node_modules 없으니 매핑하지 말라
+      - ./frontend:/app
+    command: sh -c "npm start"
     ports:
-      - "3000:3000"
+      - "3001:3000"
