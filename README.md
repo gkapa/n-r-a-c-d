@@ -38,33 +38,6 @@ React-Golang-Aws-CircleCI-Docker構成のポートフォリオを作成するこ
 ---
 # Docker
 
-* Dockerfile
-Dockerは、基本的にimageがcontainer作成と動作に必要になる。dockerfileは、packageをインストール及び動作させるための最小限の設定が含まれていて、このファイルでimageをbuildする。
-  - command
-    ```
-    FROM         베이스 이미지 지정
-    RUN          명령 실행
-    CMD          컨테이너 실행 명령
-    LABEL        라벨 설정
-    EXPOSE       포트 익스포트
-    ENV          환경변수
-    ADD          파일/디렉토리 추가
-    COPY         파일 복사
-    ENTRYPOINT   컨테이너 실행 명령
-    VOLUME       볼륨 마운트
-    USER         사용자 지정
-    WORKDIR      작업 디렉토리
-    ARG          Dockerfile 에서의 변수
-    ONBUILD      빌드 완료 후 생성된 이미지가 다른 dockerfile에서 FROM 으로 불러질 때   실행되는 명령
-    STOPSIGNAL   시스템 콜 시그널 설정
-    HEALTHCHECK  컨테이너의 헬스 체크
-    SHELL        기본 쉘 설정
-    ```
-  - example
-```
-
-```
-
 ---
 
 # その他
