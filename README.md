@@ -42,7 +42,21 @@ React-Golang-Aws-CircleCI-Docker構成のポートフォリオを作成するこ
 
 # その他
 
+* TroubleShotting
+  - React + Dockerだと Hot Reloadingが効かない  
+  CHOKIDAR_USEPOLLING=true だと解決したという例をstackoverflowとqiitaなどで見つけたが、自分の開発環境では解決せず。webpackのどちらかの問題かと思うが…  
+  そのため、フロントエンド環境はNextjsに変更。  
+  Nextjsでの Hot Reloadingは以下を next.config.jsに追加
+    ```
+    webpackDevMiddleware: (config) => {
+        config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300
+        };
+        return config;
+    }
+    ```
 
 * readme preview ショートカット: Ctrl + Shift + V
-* markdown 참고: https://gist.github.com/ihoneymon/652be052a0727ad59601
+* markdown 参考リンク: https://gist.github.com/ihoneymon/652be052a0727ad59601
 
