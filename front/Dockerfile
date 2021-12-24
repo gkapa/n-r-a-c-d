@@ -1,14 +1,11 @@
 FROM node:16.13.1-alpine
-WORKDIR /code
 
-ENV CHOKIDAR_USEPOLLING=true
+RUN mkdir /app_front
+WORKDIR /app_front
 
 COPY ./package*.json ./yarn.lock ./
 RUN yarn
-# RUN npm install react-scripts@3.0.1 -g
 
 COPY . .
-
-EXPOSE 3000
-
+RUN yarn run build
 CMD ["yarn", "start"]

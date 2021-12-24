@@ -12,6 +12,7 @@ React-Golang-Aws-CircleCI-Docker構成のポートフォリオを作成するこ
 # 目次
 
 - [Golangでのバックエンド作成](#golangでのバックエンド作成)
+- [NextJsでフロントエンド作成](#nextjsでフロントエンド作成)
 - [Docker](#docker)
 - [その他](#その他)
 
@@ -34,6 +35,15 @@ React-Golang-Aws-CircleCI-Docker構成のポートフォリオを作成するこ
     * [(Youtube) React and Golang JWT Authentication - Tutorial](https://www.youtube.com/watch?v=d4Y2DkKbxM0)  
     作成は、こちらを参照する
 
+
+---
+
+# NextJsでフロントエンド作成
+
+* NextJs 環境構築
+```
+yarn create . --typescript
+```
 
 ---
 # Docker

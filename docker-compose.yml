@@ -2,16 +2,15 @@ version: "3.8"
 services:
   front:
     build:
-      context: ./nextjs
-      dockerfile: Dockerfile
+      context: ./front
+      dockerfile: Dockerfile.dev
     tty: true
     environment:
       - CHOKIDAR_USEPOLLING=true
     volumes:
-      - /app/node_modules
-      - /app/.next
-      - ./nextjs:/app
-    command: sh -c "cd /app && npm run dev"
+      - /app_front/node_modules
+      - /app_front/.next
+      - ./front:/app_front
     ports:
       - "3000:3000"
   # front:
