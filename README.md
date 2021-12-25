@@ -32,7 +32,7 @@ React-Golang-Aws-CircleCI-Docker構成のポートフォリオを作成するこ
 >
 
 * フレームワーク選定にあたって
-    - 当初はGolangで開発を進めようとしたが、とにかくRailsでの開発者の需要が高いこと、その割にgolangでの採用を、ほぼいないことで、まだ日本でgolangで開発をしてみてもアピールポイントは低いと思った。また、golangのフレームワークの選定としても、gin, echo, fiber…数多くのフレームワークが乱立、まだ安定してないことで、レファランス探しに苦労するだろうということが目に見えたことで、Ruby on Railsに変更。
+    - 当初はGolangで開発を進めようとしたが、とにかくRailsでの開発者の需要が高いこと、その割にgolangでの採用は、ほぼいないことで、まだ日本でgolangで開発をしてみてもアピールポイントは低くなると思った。また、golangのフレームワークの選定としても、gin, echo, fiber…数多くのフレームワークが乱立、まだ安定してないことで、Ruby on Railsに変更。
 
 * Ruby on Rails 環境構築  
   - Ruby インストール  
@@ -43,15 +43,59 @@ React-Golang-Aws-CircleCI-Docker構成のポートフォリオを作成するこ
     ```
     $ ruby -v
     ```
-  - Bunder インストール  
-    - gem（rubyのライブラリ）の依存関係とバージョンを管理するためのツール  
+  - Bundler, Rails インストール  
+    - Bundler: gem（rubyのライブラリ）の依存関係とバージョンを管理するためのツール  
     - Start Command Prompt with Ruby 実行  
     - 以下を実行
     ```
-    gem install bundler
+    $ gem install bundler
+    $ gem install rails
     ```
-  - Rails インストール  
+    - Rails バージョン確認
+    ```
+    $ rails -v
+    ```
+  - 新規アプリケーション作成
+    - 作成コマンド
+    ```
+    $ rails new back
+    ```
 
+    - 主なdirectory 構成は以下の通り  
+    
+    |フォルダ|設置されるファイル|
+    |:------|---|
+    |app|アプリのプログラム|
+    |bin|アプリのコマンド|
+    |config|config|
+    |db|db関連|
+    |lib|ライブラリ|
+    |log|ログ|
+    |public|静的コンテンツ|
+
+    - 起動コマンド
+    ```
+    PS C:\workspaces\r-g-a-c-d\back> rails s
+    => Booting Puma
+    => Rails 7.0.0 application starting in development
+    => Run `bin/rails server --help` for more startup options
+    *** SIGUSR2 not implemented, signal based restart unavailable!
+    *** SIGUSR1 not implemented, signal based restart unavailable!
+    *** SIGHUP not implemented, signal based logs reopening unavailable!
+    Puma starting in single mode...
+    * Puma version: 5.5.2 (ruby 3.0.3-p157) ("Zawgyi")
+    *  Min threads: 5
+    *  Max threads: 5
+    *  Environment: development
+    *          PID: 16176
+    * Listening on http://[::1]:3000
+    * Listening on http://127.0.0.1:3000
+    Use Ctrl-C to stop
+
+    ```
+
+    - 起動テスト  
+    http://localhost:3000/
 
 ---
 
