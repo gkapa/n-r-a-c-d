@@ -1,9 +1,9 @@
-# r-g-a-c-d
+# n-r-a-c-d
 
 ---
 # 始めに 
 
-React-Golang-Aws-CircleCI-Docker構成のポートフォリオを作成することで、その過程でのすべてを記録するための備忘録  
+Next-Rails-Aws-CircleCI-Docker構成のポートフォリオを作成することで、その過程でのすべてを記録するための備忘録  
 順次にアップデートする予定
 
 
