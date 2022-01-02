@@ -58,44 +58,33 @@ Next-Rails-Aws-CircleCI-Docker構成のポートフォリオを作成するこ�
   - 新規アプリケーション作成
     - 作成コマンド
     ```
-    $ rails new back
+    $ rails new back -d postgresql
+    $ cd back
+    $ gem install pg
+    $ bundle install
     ```
 
-    - 主なdirectory 構成は以下の通り  
-    
-    |フォルダ|設置されるファイル|
-    |:------|---|
-    |app|アプリのプログラム|
-    |bin|アプリのコマンド|
-    |config|config|
-    |db|db関連|
-    |lib|ライブラリ|
-    |log|ログ|
-    |public|静的コンテンツ|
-
-    - 起動コマンド
+  - DB連動  
+    - DBのコンテナを使うように、/config/database.yml を修正
     ```
-    PS C:\workspaces\r-g-a-c-d\back> rails s
-    => Booting Puma
-    => Rails 7.0.0 application starting in development
-    => Run `bin/rails server --help` for more startup options
-    *** SIGUSR2 not implemented, signal based restart unavailable!
-    *** SIGUSR1 not implemented, signal based restart unavailable!
-    *** SIGHUP not implemented, signal based logs reopening unavailable!
-    Puma starting in single mode...
-    * Puma version: 5.5.2 (ruby 3.0.3-p157) ("Zawgyi")
-    *  Min threads: 5
-    *  Max threads: 5
-    *  Environment: development
-    *          PID: 16176
-    * Listening on http://[::1]:3000
-    * Listening on http://127.0.0.1:3000
-    Use Ctrl-C to stop
-
+    ...
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      # For details on connection pooling, see Rails configuration guide
+      # https://guides.rubyonrails.org/configuring.html#database-pooling
+      # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+      host: db
+      username: postgres
+      password: password
+      pool: 5
+    ...
     ```
 
-    - 起動テスト  
-    http://localhost:3000/
+    - サーバー実行前にdocker-compose.yml, DB作成
+    ```
+    docker-compose run back rake db:create
+    ```
 
 ---
 

@@ -3,9 +3,9 @@ FROM node:16.13.1-alpine
 RUN mkdir /app_front
 WORKDIR /app_front
 
-COPY ./package*.json ./yarn.lock ./
-RUN yarn
+COPY ./package*.json ./
+RUN npm install
 
 COPY . .
-RUN yarn run build
-CMD ["yarn", "start"]
+RUN npm run build
+CMD ["npm", "run", "start"]
