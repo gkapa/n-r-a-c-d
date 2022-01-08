@@ -11,7 +11,6 @@ Next-Rails-Aws-CircleCI-Docker構成のポートフォリオを作成するこ�
 
 # 目次
 
-<!-- - [Golangでのバックエンド作成](#golangでのバックエンド作成) -->
 - [Ruby on Railsでバックエンド作成](#ruby_on_railsでバックエンド作成)
 - [NextJsでフロントエンド作成](#nextjsでフロントエンド作成)
 - [Docker](#docker)
@@ -32,7 +31,7 @@ Next-Rails-Aws-CircleCI-Docker構成のポートフォリオを作成するこ�
 >
 
 * フレームワーク選定にあたって
-    - 当初はGolangで開発を進めようとしたが、とにかくRailsでの開発者の需要が高いこと、その割にgolangでの採用は、ほぼいないことで、まだ日本でgolangで開発をしてみてもアピールポイントは低くなると思った。また、golangのフレームワークの選定としても、gin, echo, fiber…数多くのフレームワークが乱立、まだ安定してないことで、Ruby on Railsに変更。
+  - 当初はGolangで開発を進めようとしたが、とにかくRailsでの開発者の需要が高いこと、その割にgolangでの採用は、ほぼいないことで、まだ日本でgolangで開発をしてみてもアピールポイントは低くなると思った。また、golangのフレームワークの選定としても、gin, echo, fiber…数多くのフレームワークが乱立、まだ安定してないことで、Ruby on Railsに変更。
 
 * Ruby on Rails 環境構築  
   - Ruby インストール  
