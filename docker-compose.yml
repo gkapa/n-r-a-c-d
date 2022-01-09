@@ -40,21 +40,20 @@ services:
     # command: bundle exec rails s -p 3000 -b '0.0.0.0'
     depends_on:
       - db
-  # front:
-  #   container_name: front
-  #   build:
-  #     context: ./front
-  #     dockerfile: Dockerfile.dev
-  #   tty: true
-  #   environment:
-  #     - CHOKIDAR_USEPOLLING=true
-  #   volumes:
-  #     - /app_front/node_modules
-  #     - /app_front/.next
-  #     - ./front:/app_front
-  #   ports:
-  #     - "3000:3000"
-  #   command: "npm run dev"
+  front:
+    container_name: front
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - /app_front/node_modules
+      - /app_front/.next
+      - ./front:/app_front
+    ports:
+      - "3000:3000"
+    command: "npm run dev"
 volumes:
   datavol:
-# env_file: .env

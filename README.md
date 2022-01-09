@@ -94,6 +94,26 @@ Next-Rails-Aws-CircleCI-Docker構成のポートフォリオを作成するこ�
 yarn create . --typescript
 ```
 
+* src directory 作成
+```
+-- tsconfig.json に以下を追加
+
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  }
+}
+```
+
+* ライブラリ
+```
+
+-- styled components
+npm i styled-components; npm i -D @types/styled-components
+-- mui(material ui)
+npm install @mui/material @mui/styled-engine-sc styled-components
+```
+
 ---
 # Docker
 
