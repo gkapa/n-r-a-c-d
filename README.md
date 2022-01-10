@@ -105,13 +105,19 @@ yarn create . --typescript
 }
 ```
 
-* ライブラリ
+* ライブラリ インストール
 ```
 
 -- styled components
 npm i styled-components; npm i -D @types/styled-components
 -- mui(material ui)
-npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @mui/material @mui/styled-engine-sc @mui/icons-material
+```
+
+
+* ディレクトリ構成
+```
+TBD
 ```
 
 ---
