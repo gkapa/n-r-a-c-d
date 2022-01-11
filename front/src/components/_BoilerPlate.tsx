@@ -1,18 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import { Box } from "@mui/material";
-import { styled } from "@mui/material/styles";
-// import { Link as RouterLink } from "react-router-dom";
+import { styled as mstyled } from "@mui/material/styles";
+import styled from "styled-components";
 
 export default function Fun() {
   return (
-    <WrapperBox>
+    <ComponentWrapper>
       <h1>Hello, Wolrd!</h1>
       <Link href="/posts/first-post">
         <a>this page!</a>
       </Link>
-    </WrapperBox>
+    </ComponentWrapper>
   );
 }
 
-const WrapperBox = styled(Box)``;
+const ComponentWrapper = styled.div``;

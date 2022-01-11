@@ -3,9 +3,7 @@
 ---
 # 始めに 
 
-Next-Rails-Aws-CircleCI-Docker構成のポートフォリオを作成することで、その過程でのすべてを記録するための備忘録  
-順次にアップデートする予定
-
+Next-Rails-Aws-CircleCI-Docker構成のページを作成することで、その過程でのすべてを記録するための備忘録  
 
 ---
 
@@ -107,11 +105,12 @@ yarn create . --typescript
 
 * ライブラリ インストール
 ```
+-- mui(material ui), styled-components, mui icon
+npm i @mui/material @emotion/react @emotion/styled 
+npm i @mui/styled-engine-sc styled-components; npm i -D @types/styled-components
+npm i @mui/icons-material
 
--- styled components
-npm i styled-components; npm i -D @types/styled-components
--- mui(material ui)
-npm install @mui/material @mui/styled-engine-sc @mui/icons-material
+
 ```
 
 

@@ -1,17 +1,11 @@
 import React from "react";
-import { Box } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import GenericTemplate from "components/templates/GenericTemplate";
-// import { Link as RouterLink } from "react-router-dom";
+import Link from "next/link";
+// import { Box } from "@mui/material";
+import { styled as mstyled } from "@mui/material/styles";
+import styled from "styled-components";
 
 export default function Fun() {
-  return (
-    <WrapperBox>
-      <GenericTemplate title="home">
-        <div>sdf</div>
-      </GenericTemplate>
-    </WrapperBox>
-  );
+  return <ComponentWrapper>sdf</ComponentWrapper>;
 }
 
-const WrapperBox = styled(Box)``;
+const ComponentWrapper = styled.div``;
