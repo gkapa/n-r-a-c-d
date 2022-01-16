@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
-// import { Box } from "@mui/material";
-import { styled as mstyled } from "@mui/material/styles";
 import styled from "styled-components";
 import { theme } from "consts/globalContst";
+import TextButton from "components/atoms/TextButton";
 
 interface ISidebarContext {
   isSidebarOn: boolean;
@@ -22,15 +21,28 @@ export default function Fun() {
     <>
       <Appbar>
         <Toolbar>
-          <div className="toolbar__left"></div>
-          <div className="toolbar__right"></div>
+          <div className="toolbar__left">
+            <div className="toolbar__logo">
+              <Link href="/">
+                <a>
+                  <img src="/logo/logo_banner.png" style={{ maxWidth: "120px;" }} />
+                </a>
+              </Link>
+            </div>
+          </div>
+          <div className="toolbar__right">
+            {" "}
+            <div className="toolbar_links">
+              <Link href="/">
+                <TextButton href="/">Home</TextButton>
+              </Link>
+            </div>
+          </div>
         </Toolbar>
       </Appbar>
     </>
   );
 }
-
-const ComponentWrapper = styled.div``;
 
 const Appbar = styled.div`
   position: relative;
@@ -39,5 +51,16 @@ const Appbar = styled.div`
 `;
 
 const Toolbar = styled.div`
+  margin: 0 auto;
+  max-width: ${theme.layout.navbar.maxWidthPx}px;
+  padding: 2px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: white;
+
+  .toolbar__left .toolbar__right {
+    display: flex;
+    align-items: center;
+  }
 `;

@@ -110,7 +110,37 @@ npm i @mui/material @emotion/react @emotion/styled
 npm i @mui/styled-engine-sc styled-components; npm i -D @types/styled-components
 npm i @mui/icons-material
 
+*styled-components, muiはサーバーサイドレンダリングとの兼ね合いでスタイル定義の処理順序を制御
+*NextJs + styled-components用 設定. 
+npm i -D babel-plugin-styled-components
+cd /front; type nul > .babelrc
 
+.babelrc =>
+{
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "babel-plugin-styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+        }
+      ]
+    ]
+  }
+
+
+*NextJs + mui用 設定.
+https://mui.com/guides/styled-engine/#next-js
+https://maku.blog/p/s6djqw3/
+
+```
+
+* 
+  - ルートディレクトリに.babelrc
+```
 ```
 
 
