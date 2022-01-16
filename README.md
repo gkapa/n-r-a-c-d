@@ -12,6 +12,7 @@ Next-Rails-Aws-CircleCI-Docker構成のページを作成することで、そ�
 - [Ruby on Railsでバックエンド作成](#ruby_on_railsでバックエンド作成)
 - [NextJsでフロントエンド作成](#nextjsでフロントエンド作成)
 - [Docker](#docker)
+- [Youtube Api 活用](#youtube_api_活用)
 - [その他](#その他)
 
 ---
@@ -137,11 +138,6 @@ https://maku.blog/p/s6djqw3/
 
 ```
 
-* 
-  - ルートディレクトリに.babelrc
-```
-```
-
 
 * ディレクトリ構成
 ```
@@ -151,6 +147,42 @@ TBD
 ---
 # Docker
 
+* Docker + NextJsで Hot Reloading追加方法
+  - next.config.js　に以下を追加
+```
+module.exports = {
+  ...
+  webpackDevMiddleware: (config) => {
+      config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300
+      };
+      return config;
+  }
+  ...
+}
+```
+
+---
+
+# Youtube api 活用
+
+* 登録
+  - [google cloud platform](https://console.cloud.google.com/projectselector2/apis/dashboard?supportedpurview=project) \
+  => 「+API 및 서비스 사용 설정」 \
+  => 「youtube」 検索 \
+  => 「Youtube Data API v3」
+  => 「사용자 인증 정보 만들기」 \
+  => 「액세스할 데이터는 무엇인가요? * => 「공개 데이터」 チェック => 「완료」\
+  => API key 仕様可能になる
+
+* API使用にあたって
+  - 一日無料に使用可能なポイントは 10000 単位
+  - 簡単な作業から複雑な作業まで消費される単位が異なる
+  - 詳しくは、https://developers.google.com/youtube/v3/getting-started?hl=ko
+
+
+
 ---
 
 # その他
@@ -158,17 +190,7 @@ TBD
 * TroubleShotting
   - React + Dockerだと Hot Reloadingが効かない  
   CHOKIDAR_USEPOLLING=true だと解決したという例をstackoverflowとqiitaなどで見つけたが、自分の開発環境では解決せず。webpackのどちらかの問題かと思うが…  
-  そのため、フロントエンド環境はNextjsに変更。  
-  Nextjsでの Hot Reloadingは以下を next.config.jsに追加
-    ```
-    webpackDevMiddleware: (config) => {
-        config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300
-        };
-        return config;
-    }
-    ```
+  Nextjsでの Hot Reloadingは docker 項目参照
 
 * readme preview ショートカット: Ctrl + Shift + V
 * markdown 参考リンク: https://gist.github.com/ihoneymon/652be052a0727ad59601
