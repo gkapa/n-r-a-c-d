@@ -5,22 +5,17 @@ import { theme } from "consts/globalContst";
 import TextButton from "components/atoms/TextButton";
 import IconButton from "components/atoms/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-
-interface ISidebarContext {
-  isSidebarOn: boolean;
-  setIsSidebarOn: any;
-}
-
-export const SidebarContext = React.createContext<ISidebarContext>({
-  isSidebarOn: false,
-  setIsSidebarOn: () => {}
-});
+import SideAnchor from "./SideAnchor";
+import { SidebarContext } from "./context";
 
 export default function Fun() {
   const [isSidebarOn, setIsSidebarOn] = React.useState(false);
 
   return (
     <>
+      <SidebarContext.Provider value={{ isSidebarOn, setIsSidebarOn }}>
+        <SideAnchor />
+      </SidebarContext.Provider>
       <Appbar>
         <Toolbar>
           <div className="toolbar__left">
@@ -39,7 +34,7 @@ export default function Fun() {
               </Link>
             </div>
             <div className="toolbar__anchorButton">
-              <IconButton>
+              <IconButton onClick={() => setIsSidebarOn(true)}>
                 <MenuIcon sx={{ fontSize: 36 }} />
               </IconButton>
             </div>
@@ -52,7 +47,7 @@ export default function Fun() {
 
 const Appbar = styled.div`
   position: relative;
-  background-color: #273952;
+  background: #273952;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   align-items: center;
 `;

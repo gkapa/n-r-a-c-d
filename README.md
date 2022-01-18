@@ -19,19 +19,6 @@ Next-Rails-Aws-CircleCI-Docker構成のページを作成することで、そ�
 
 # Ruby on Railsでバックエンド作成
 
-<del>
-* Go 環境構築
-    * Go パッケージダウンロード
-        https://go.dev/ から windows用 msiファイルをダウンロード  
-        ![IDB_2021_12_17_01_001](https://user-images.githubusercontent.com/44703302/146411047-e8561a92-d47b-49b1-938b-2935039b9b11.jpg)  
-    * Vscode Go Extension インストール  
-    ![IDB_2021_12_17_01_003](https://user-images.githubusercontent.com/44703302/146412309-1a6d7ae3-fc11-4e49-ba1f-d36b33a2b0a3.jpg)  
-</del>
->
-
-* フレームワーク選定にあたって
-  - 当初はGolangで開発を進めようとしたが、とにかくRailsでの開発者の需要が高いこと、その割にgolangでの採用は、ほぼいないことで、まだ日本でgolangで開発をしてみてもアピールポイントは低くなると思った。また、golangのフレームワークの選定としても、gin, echo, fiber…数多くのフレームワークが乱立、まだ安定してないことで、Ruby on Railsに変更。
-
 * Ruby on Rails 環境構築  
   - Ruby インストール  
     - ダウンロード  
